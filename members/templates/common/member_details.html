@@ -1,0 +1,24 @@
+{% extends "common/master.html" %}
+
+{% block title %}
+    Member Details
+{% endblock %}
+{% block login %}
+    <div class="rightnavelement"><a href="/login">LOGIN</a></div>
+    <div class="rightnavelement"><a href="/register">REGISTER</a></div>
+{% endblock %}
+
+{% block content %}
+<div class="mycard">
+    <h1>{{ member.firstname }} {{ member.lastname }}</h1>
+    <p class="label">Tennis Proficiency Level: </p> <p class="data">{{ member.proficiency }}</p>
+    
+    {% if member.age %}
+        <p class="label">Age: </p> <p class="data">{{ member.age }}</p>
+    {% endif %}
+    
+    {% if member.contact %}
+        <p class="label">Contact: </p> <p class="data">{{ member.contact }}</p>
+    {% endif %}
+</div>
+{% endblock %}

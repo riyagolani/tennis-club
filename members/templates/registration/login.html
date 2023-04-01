@@ -1,0 +1,20 @@
+{% extends "common/master.html" %}
+
+{% block title %}
+  Login
+{% endblock %}
+{% block login %}
+    <div class="rightnavelement"><a href="/register">REGISTER</a></div>
+{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container py-5">
+  <center><h2>Login</h2></center>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Login</button>
+  </form>
+</div>
+{% endblock %}
